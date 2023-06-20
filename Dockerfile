@@ -4,8 +4,8 @@ FROM $NOTEBOOK_BASE
 ARG RSTUDIO_URL=https://rstudio.org/download/latest/stable/server/focal/rstudio-server-latest-amd64.deb
 ARG LIBSSL_URL=http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.19_amd64.deb
 
-WORKDIR /root
 USER root
+WORKDIR /root
 
 RUN wget -O rstudio.deb "$RSTUDIO_URL"     \
       && wget -O libssl.deb "$LIBSSL_URL"  \
