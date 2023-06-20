@@ -28,7 +28,6 @@ RUN pip install                            \
 
 ENV PATH="$PATH:/usr/sbin/rstudio-server"
 
-USER ${NB_USER:-jovyan}
+# NB_USER is inherited from notebooks base image
+USER ${NB_USER}
 WORKDIR $HOME
-ENTRYPOINT ["tini" "-g" "--"]
-CMD ["start-notebook.sh"]
